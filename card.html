@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,17 +24,17 @@
 
      <div class=" flex items-center gap-1 ">
 
-<div class="flex items-center gap-8 pl-4 border-gray-200">
+<div class="relative flex items-center gap-8 pl-4 border-gray-200">
     <h2><span id="user-name"></span></h2>
     
  
-<div class="relative pl-4 border-gray-200">
+<div class=" pl-4 border-gray-200">
     <div onclick="toggleCartDropdown()" class="cursor-pointer flex items-center relative pr-2">
         <i id="cart-icon" class="fas fa-shopping-cart text-lg text-gray-700 hover:text-black transition-all duration-300 hover:scale-110"></i>
         <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
     </div>
     
-    <div id="cart-dropdown" class="hidden absolute right-0 mt-3 w-80 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
+  <div id="cart-dropdown" class="hidden absolute -right-6 mt-3 w-80  bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden transform origin-top-right">
         <div class="p-3 bg-gray-50 border-b border-gray-100 font-semibold text-gray-700 text-sm flex justify-between items-center">
             <span>Shopping Cart</span>
             <button onclick="clearCart()" class="text-xs text-red-500 hover:underline font-normal">Clear All</button>
@@ -71,16 +62,18 @@
 </nav>
 </header>
 
-
+     
  <!-- Cart Items -->
-  <div class="max-w-[1000px] mx-auto  p-6 mt-8">
+  <div class="max-w-[1000px] w-full mx-auto  p-6 mt-8">
     <div class="  flex flex-col justify-between w-full" id="cart-items">
+        
     </div>
 </div>
     <!-- Total Price -->
     <div class="container mt-3 mx-auto ">
         <h3 class="text-center text-2xl font-bold text-gray-800">Total Price: <span id="totalPrice" class="text-blue-600"></span></h3>
     </div>
+   
     <hr>
 
     <div class="container max-w-[1000px] w-full mx-auto p-6 mt-[25px]">
@@ -89,6 +82,7 @@
         <!-- المنتجات سيتم توليدها هنا -->
     </div>
 </div>
+
 <footer class="mt-20 border-t border-gray-200">
 <div class="max-w-[1300px] mx-auto py-8 text-center text-gray-500 text-sm">
 © 2026 ShopEase. All rights reserved.
