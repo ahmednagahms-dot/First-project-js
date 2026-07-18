@@ -23,17 +23,17 @@
 
      <div class=" flex items-center gap-1 ">
 
-<div class="flex items-center gap-8 pl-4 border-gray-200">
+<div class="relative flex items-center gap-8 pl-4 border-gray-200">
     <h2><span id="user-name"></span></h2>
     
  
-<div class="relative pl-4 border-gray-200">
+<div class=" pl-4 border-gray-200">
     <div onclick="toggleCartDropdown()" class="cursor-pointer flex items-center relative pr-2">
         <i id="cart-icon" class="fas fa-shopping-cart text-lg text-gray-700 hover:text-black transition-all duration-300 hover:scale-110"></i>
         <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
     </div>
     
-    <div id="cart-dropdown" class="hidden absolute right-0 mt-3 w-80 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
+    <div id="cart-dropdown" class="hidden absolute -right-6 mt-3 w-80 bg-white rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
         <div class="p-3 bg-gray-50 border-b border-gray-100 font-semibold text-gray-700 text-sm flex justify-between items-center">
             <span>Shopping Cart</span>
             <button onclick="clearCart()" class="text-xs text-red-500 hover:underline font-normal">Clear All</button>
