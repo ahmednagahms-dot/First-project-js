@@ -15,25 +15,30 @@ function renderCartItems() {
     }
 
 const cartItemsHtml = cartItems.map(item => `
-    <div class="flex flex-row  items-center w-[450px] p-[30px] bg-white  rounded-lg shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border  hover:border-blue-600" data-product-id="${item.id}">
-        <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded-md flex-shrink-0">
-        <div class="flex-1">
-            <h5 class="font-bold text-gray-800 mb-1">${item.name}</h5>
-            <p class="text-sm text-gray-500 mb-1">Category: ${item.category}</p>
-            <p class="text-sm text-gray-700 mb-3">Price: $<span id="itemPrice${item.id}">${item.price * item.quantity}</span></p>
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2">
-                    <button onclick="decreaseQuantity(${item.id})" class="border w-8 h-8 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-400">-</button>
-                    <span id="itemQuantity${item.id}" class="font-medium">${item.quantity}</span>
-                    <button onclick="increaseQuantity(${item.id})" class="border w-8 h-8 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:border-blue-400">+</button>
+    <div class="flex flex-row items-center gap-4 w-full md:max-w-[550px] max-w-[450px] p-4 md:p-6 bg-white rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border hover:border-blue-600" data-product-id="${item.id}">
+        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-md flex-shrink-0">
+        
+        <div class="flex-1 min-w-0">
+            <h5 class="font-bold text-gray-800 text-base md:text-lg mb-0.5 truncate">${item.name}</h5>
+            <p class="text-xs md:text-sm text-gray-500 mb-0.5">Category: ${item.category}</p>
+            <p class="text-sm md:text-base font-semibold text-gray-700 mb-3">Price: $<span id="itemPrice${item.id}">${item.price * item.quantity}</span></p>
+            
+            <div class="flex flex-wrap items-center justify-between gap-3">
+            
+                <div class="flex items-center gap-2 bg-gray-50 p-1 rounded-lg border">
+                    <button onclick="decreaseQuantity(${item.id})" class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-md bg-white border hover:bg-blue-50 hover:border-blue-400 transition-colors">-</button>
+                    <span id="itemQuantity${item.id}" class="font-medium text-sm md:text-base px-1">${item.quantity}</span>
+                    <button onclick="increaseQuantity(${item.id})" class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-md bg-white border hover:bg-blue-50 hover:border-blue-400 transition-colors">+</button>
                 </div>
-                <button onclick="removeFromCart(${item.id})" class="bg-red-500 hover:bg-red-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                    Remove from Cart
+                
+                <button onclick="removeFromCart(${item.id})" class="bg-red-500 hover:bg-red-600 text-white text-xs md:text-sm font-medium px-3 md:px-4 py-2 rounded-lg transition-all duration-300 whitespace-nowrap">
+                    <span class="inline md:hidden">Remove</span>
+                    <span class="hidden md:inline">Remove from Cart</span>
                 </button>
             </div>
         </div>
     </div>
-`).join('');
+`).join('')
 
     cartItemsContainer.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-8">${cartItemsHtml}</div>`;
 
