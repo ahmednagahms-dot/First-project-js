@@ -14,6 +14,7 @@ function renderCartItems() {
         return;
     }
 
+
 const cartItemsHtml = cartItems.map(item => `
     <div class="flex flex-row items-center gap-4 w-full md:max-w-[550px] max-w-[450px] p-4 md:p-6 bg-white rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border hover:border-blue-600" data-product-id="${item.id}">
         <img src="${item.image}" alt="${item.name}" class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-md flex-shrink-0">
